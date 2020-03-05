@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">MilestoneApp</string>
+	<string name="username">username</string>
+	<string name="password">password</string>
+	<string name="login">login</string>
+	<string name="Addnote">Addnote</string>
+	<string name="datetext">datetext</string>
+</resources>
