@@ -45,11 +45,15 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				final String userString = uname.getText().toString();
+				final String passString = password.getText().toString();
 				SharedPreferences.Editor editor = preferences.edit();
 				editor.putString("user",userString);
 				editor.commit();
-				if (password.getText().length()<=6){
-					Toast.makeText(MainActivity.this, "User password is to short "+userString ,Toast.LENGTH_SHORT)
+				if (passString.length()<=6) {
+					Toast.makeText(MainActivity.this, "User password is to short " + userString, Toast.LENGTH_SHORT)
+									.show();
+				} else if(passString.isEmpty() || userString.isEmpty()){
+					Toast.makeText(MainActivity.this, "Please fill all fields", Toast.LENGTH_SHORT)
 									.show();
 				} else {
 					Intent intent= new Intent(MainActivity.this, home.class);
