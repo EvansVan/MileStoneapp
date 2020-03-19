@@ -24,7 +24,7 @@ public class home extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home);
 
-		final SharedPreferences preferences = getSharedPreferences( "user_preferences",MODE_PRIVATE);
+		final SharedPreferences preferences = getSharedPreferences( "user_login",MODE_PRIVATE);
 		africa = findViewById(R.id.imageView);
 		dateText = findViewById(R.id.dateText);
 		addNote = findViewById(R.id.addNote);
@@ -32,7 +32,6 @@ public class home extends AppCompatActivity {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		String dateString = formatter.format(new Date(System.currentTimeMillis()));
 
-		SharedPreferences.Editor editor = preferences.edit();
 		String userName = preferences.getString("user",null);
 		dateText.setText("Welcome " + userName + " working " + dateString);
 
